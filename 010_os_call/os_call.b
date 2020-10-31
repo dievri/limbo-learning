@@ -17,8 +17,9 @@ Os: module
 
 init(ctxt: ref Draw->Context, args: list of string) {
     sys: Sys;
-    path := hd tl args;
-    cmd := list of {"os", path};
-    pump := load Os "/dis/os.dis";
-    pump -> init(ctxt, cmd);
+    print: import sys;
+    sys = load Sys Sys->PATH;
+    command := hd tl args;
+    exec_os := load Os "/dis/os.dis";
+    exec_os -> init(ctxt, list of {"os", command});
 }
