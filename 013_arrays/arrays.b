@@ -34,5 +34,10 @@ init(ctxt: ref Draw->Context, vargs: list of string) {
         1 or 3 or 5 or 7 or 9 => 0,
         * => - 1
     };
-    
+
+    # Multi-dimensional array
+    m2 := array[10] of {* => array[100] of big};
+
+    # Matrix 12x8 with all "hello" cells
+    m2d := array[12] of {* => array[8] of {* => "hello"}};
 }
